@@ -13,14 +13,25 @@ An online marketplace application with seller accounts, product search and sugge
 3. MongoDB (4.2.0)
 4. Stripe account with test data
 
+> Note: This codebase uses Webpack 4. If you use newer Node versions (for example Node 18+), OpenSSL compatibility is required. The npm scripts in this repo already include the needed `NODE_OPTIONS=--openssl-legacy-provider` flag.
+
 ####  How to run this code
-1. Make sure MongoDB is running on your system 
-2. Clone this repository
-3. Update config/config.js with your test values for Stripe API keys and Stripe Connect Client ID 
-4. Open command line in the cloned folder,
+1. Create a `.env` file from `.env.example`.
+2. If you are using MongoDB Atlas, create a cluster and database user, then add your Atlas URI to `MONGODB_URI` in `.env`.
+3. In Atlas, open **Network Access** and allow your current IP (or `0.0.0.0/0` for development only).
+4. Add your Stripe test values to `.env`.
+5. Open command line in the cloned folder,
    - To install dependencies, run ```  npm install  ``` or ``` yarn ```
    - To run the application for development, run ```  npm run development  ``` or ``` yarn development ```
-5. Open [localhost:3000](http://localhost:3000/) in the browser
+6. Open [localhost:3000](http://localhost:3000/) in the browser
+
+####  Legacy local MongoDB setup (optional)
+1. Make sure MongoDB is running on your system.
+2. Clone this repository
+3. Open command line in the cloned folder,
+   - To install dependencies, run ```  npm install  ``` or ``` yarn ```
+   - To run the application for development, run ```  npm run development  ``` or ``` yarn development ```
+4. Open [localhost:3000](http://localhost:3000/) in the browser
 ---- 
 ### More applications built using this stack
 
